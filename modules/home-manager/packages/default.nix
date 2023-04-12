@@ -1,20 +1,20 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, ... }: {
    home.packages = with pkgs; [ 
-	#firefox
-	#vim 
-	#neovim
+	firefox
+	vim 
+	neovim
 	git
-	#home-manager
-	#htop
-	#tmux 
-	#virt-manager
-	#qemu
-	#docker
-	#hyprpaper
-	#alacritty
-	#obsidian
-	#waybar
-	#lua
-	#nodejs
+	home-manager
+	htop
+	tmux 
+	virt-manager
+	qemu
+	docker
+	hyprpaper
+	alacritty
+	obsidian
+	waybar
+	lua
+	nodejs
  ];
 }

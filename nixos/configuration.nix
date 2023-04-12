@@ -5,7 +5,6 @@
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
-    inputs.hardware
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -19,6 +18,8 @@
       allowUnfree = true;
     };
   };
+
+home-manager.useUserPackages = true;
 
   nix = {
     # This will add each flake input as a registry
@@ -36,6 +37,7 @@
   };
 
   networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;

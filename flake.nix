@@ -17,7 +17,7 @@
     hardware.url = "github:nixos/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, home-manager,hyprland, hardware ... }@inputs:
+  outputs = { self, nixpkgs, home-manager,hyprland, hardware, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -45,6 +45,8 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./nixos/configuration.nix
+	    hyprland.nixosModules.default
+	    {programs.hyprland.enable = true;}
           ];
         };
       };
