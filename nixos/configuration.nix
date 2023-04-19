@@ -19,7 +19,6 @@
     };
   };
 
-home-manager.useUserPackages = true;
 
   nix = {
     # This will add each flake input as a registry
@@ -43,6 +42,13 @@ home-manager.useUserPackages = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
+  # DisplayManager 
+  services.xserver = {
+     displayManager.gdm = {
+	enable = true;
+  };
+};
 
   users.users = {
     mega = {
