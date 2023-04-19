@@ -7,6 +7,6 @@ scrolling:
   multiplier: 3
 font:
   normal:
-    family:  Fira Code
+    family:  Terminus
     style: Bold
   size: 15

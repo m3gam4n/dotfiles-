@@ -2,8 +2,8 @@
   imports = [
 
      outputs.homeManagerModules.packages
-     outputs.homeManagerModules.hyprland
-     outputs.homeManagerModules.hyprpaper
+     #outputs.homeManagerModules.hyprland
+     #outputs.homeManagerModules.hyprpaper
      outputs.homeManagerModules.neovim
      outputs.homeManagerModules.tmux
      outputs.homeManagerModules.waybar

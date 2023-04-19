@@ -10,5 +10,6 @@
 	waybar
 	lua
 	nodejs
+	terminus-nerdfont
  ];
 }
