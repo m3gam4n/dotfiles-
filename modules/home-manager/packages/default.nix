@@ -11,6 +11,6 @@
 	lua
 	nodejs
 	terminus-nerdfont
-	rofi
+	wofi
  ];
 }

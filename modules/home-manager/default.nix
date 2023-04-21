@@ -5,6 +5,6 @@
    alacritty = import ./alacritty;
    waybar = import ./waybar;
    neovim = import ./neovim;
-   #rofi ?y
+   wofi = import ./wofi;
    packages = import ./packages;
 }

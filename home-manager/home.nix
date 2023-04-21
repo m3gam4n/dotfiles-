@@ -8,6 +8,8 @@
      outputs.homeManagerModules.tmux
      outputs.homeManagerModules.waybar
      outputs.homeManagerModules.alacritty
+     #outputs.homeManagerModules.wofi
+
   ];
   nixpkgs = {
     config = {
