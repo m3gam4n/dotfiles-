@@ -9,6 +9,8 @@
      outputs.homeManagerModules.waybar
      outputs.homeManagerModules.alacritty
      #outputs.homeManagerModules.wofi
+     #outputs.homeManagerModules.pulseaudio
+     #outputs.homeManagerModules.backlight
 
   ];
   nixpkgs = {
@@ -22,8 +24,6 @@
     username = "mega";
     homeDirectory = "/home/mega";
   };
-
-
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

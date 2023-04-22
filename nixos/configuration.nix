@@ -19,7 +19,6 @@
     };
   };
 
-
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
@@ -49,6 +48,9 @@
 	enable = true;
   };
 };
+
+#backlight no home-manager entry :c
+programs.light.enable = true;
 
   users.users = {
     mega = {
