@@ -12,7 +12,6 @@ programs.alacritty = {
 		};	
 		font.normal = {
 			family = "Terminus";
-			style = "normal";
 			size = 15;	
 	};
    };

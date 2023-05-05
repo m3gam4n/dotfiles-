@@ -12,6 +12,7 @@
 	nodejs
 	terminus-nerdfont
     terminus_font
+    hyprpaper
 	wofi
     wayland
  ];

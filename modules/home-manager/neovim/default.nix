@@ -32,9 +32,15 @@
 		-- require('lua/settings').setup{}
 
 		-- plugins
-		-- oceanic next
+		-- oceanic-next
 		{url = "https://github.com/mhartington/oceanic-next"},
+
+		-- oceanic-material
 		{url = "https://github.com/nvimdev/oceanic-material"},
+
+        -- gruvbox
+		{url = "https://github.com/nvimdev/oceanic-material"},
+
 		-- html syntax
 		{url = "https://github.com/othree/html5.vim"},
 		{url = "https://github.com/othree/xml.vim"},
