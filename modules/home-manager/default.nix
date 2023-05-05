@@ -1,6 +1,6 @@
 {
    tmux = import ./tmux;
-  #hyprland = import ./hyprland;
+   #hyprland = import ./hyprland;
    hyprpaper = import ./hyprpaper;
    alacritty = import ./alacritty;
    waybar = import ./waybar;
@@ -9,4 +9,5 @@
    packages = import ./packages;
    pulseaudio = import ./pulseaudio;
    backlight = import ./backlight;
+   git = import ./git;
 }

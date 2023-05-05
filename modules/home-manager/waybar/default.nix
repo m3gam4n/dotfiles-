@@ -9,10 +9,11 @@ programs.waybar ={
                  border-radius: 0px;
                  transition-property: background-color;
                  transition-duration: 0.5s;
+                 min-height: 30px;
                }
                @keyframes blink_red {
                  to {
-                   background-color: rgb(242, 143, 173);
+                   background-color: #101820; 
                    color: rgb(26, 24, 38);
                  }
                }
@@ -27,10 +28,10 @@ programs.waybar ={
                  background-color: transparent;
                }
                window > box {
-                 margin-left: 5px;
-                 margin-right: 5px;
-                 margin-top: 5px;
-                 background-color: rgb(30, 30, 46);
+                 margin-left: 8px;
+                 margin-right: 8px;
+                 margin-top: 8px;
+                 background-color:#101820; 
                }
          #workspaces {
                  padding-left: 0px;
@@ -75,34 +76,34 @@ programs.waybar ={
                /*     color: rgb(26, 24, 38); */
                /* } */
          #memory {
-                 color: rgb(181, 232, 224);
+                 color: rgb(217, 224, 238);
                }
          #cpu {
-                 color: rgb(245, 194, 231);
+                 color: rgb(217, 224, 238);
                }
          #clock {
                  color: rgb(217, 224, 238);
                }
         /* #idle_inhibitor {
-                 color: rgb(221, 182, 242);
+                 color: rgb(217, 224, 238);
                }*/
          #custom-wall {
-                 color: rgb(221, 182, 242);
+                 color: rgb(217, 224, 238);
             }
          #temperature {
-                 color: rgb(150, 205, 251);
+                 color: rgb(217, 224, 238);
                }
          #backlight {
-                 color: rgb(248, 189, 150);
+                 color: rgb(217, 224, 238);
                }
          #pulseaudio {
-                 color: rgb(245, 224, 220);
+                 color: rgb(217, 224, 238);
                }
          #network {
-                 color: #ABE9B3;
+                 color: rgb(217, 224, 238);
                }
          #network.disconnected {
-                 color: rgb(255, 255, 255);
+                 color: rgb(221, 182, 242);
                }
          #battery.charging, #battery.full, #battery.discharging {
                  color: rgb(250, 227, 176);
@@ -111,7 +112,7 @@ programs.waybar ={
                  color: rgb(242, 143, 173);
                }
          #custom-powermenu {
-                 color: rgb(242, 143, 173);
+                 color: #ff0000;
                }
          #tray {
                  padding-right: 8px;

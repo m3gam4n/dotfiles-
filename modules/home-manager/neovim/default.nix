@@ -34,6 +34,7 @@
 		-- plugins
 		-- oceanic next
 		{url = "https://github.com/mhartington/oceanic-next"},
+		{url = "https://github.com/nvimdev/oceanic-material"},
 		-- html syntax
 		{url = "https://github.com/othree/html5.vim"},
 		{url = "https://github.com/othree/xml.vim"},
@@ -64,6 +65,7 @@
 		{'akinsho/bufferline.nvim', version = "v3.*", dependencies = 'nvim-tree/nvim-web-devicons'},
 		})
 		local set = vim.opt
+        set.syntax  = on
 		set.number = true
 		set.ignorecase = true
 		set.smartcase = true
@@ -79,7 +81,7 @@
 		-- set.backspace
 
 		-- colorscheme idk why set.colorscheme doesn't work :(
-		vim.cmd[[colorscheme OceanicNext]]
+		vim.cmd[[colorscheme oceanic_material]]
 		vim.api.nvim_set_keymap('n', '<Leader>w', ':write<Enter>', {})
 		vim.api.nvim_set_keymap('n', '<Leader>r', ':redraw!<Enter>', {})
 		vim.api.nvim_set_keymap('i','kj','esc>', {noremap = true})

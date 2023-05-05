@@ -4,6 +4,7 @@
         enable = true;
         extraConfig =  ''
 # default prefix
+set-option -sa terminal-overrides ',alacritty:RGB'
 unbind C-b
 set -g prefix C-a
 # reload configuration

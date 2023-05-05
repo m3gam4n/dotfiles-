@@ -12,5 +12,6 @@
 	nodejs
 	terminus-nerdfont
 	wofi
+    wayland
  ];
 }

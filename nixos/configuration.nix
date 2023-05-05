@@ -42,15 +42,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  # DisplayManager 
-  services.xserver = {
-     displayManager.gdm = {
-	enable = true;
-  };
-};
 
 #backlight no home-manager entry :c
 programs.light.enable = true;
+
+#enable virtualisation
+virtualisation.libvirtd.enable = true;
+programs.dconf.enable = true;
 
   users.users = {
     mega = {
@@ -62,6 +60,7 @@ programs.light.enable = true;
       "sudo"
       "video"
       "nix"
+      "libvirtd"
      ];
     };
   };
