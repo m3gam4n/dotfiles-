@@ -46,6 +46,18 @@
 #backlight no home-manager entry :c
 programs.light.enable = true;
 
+#enable ly display manager
+ services.xserver = {
+    enable = true;
+    layout = "us";
+    desktopManager.enlightenment.enable = true;
+    displayManager.ly = {
+      enable = true;
+      defaultUser = "bjorn";
+    };
+  };
+
+
 #enable virtualisation
 virtualisation.libvirtd.enable = true;
 programs.dconf.enable = true;
