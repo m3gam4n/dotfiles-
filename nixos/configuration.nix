@@ -49,11 +49,8 @@ programs.light.enable = true;
 #enable ly display manager
  services.xserver = {
     enable = true;
-    layout = "us";
-    desktopManager.enlightenment.enable = true;
-    displayManager.ly = {
+    displayManager.lightdm = {
       enable = true;
-      defaultUser = "bjorn";
     };
   };
 
