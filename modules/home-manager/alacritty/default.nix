@@ -11,8 +11,8 @@ programs.alacritty = {
 		multiplier = 3;		
 		};	
 		font.normal = {
-			family = "Fira Code";
-			style = "Bold";
+			family = "Terminus";
+			style = "normal";
 			size = 15;	
 	};
    };

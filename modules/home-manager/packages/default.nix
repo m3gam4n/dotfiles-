@@ -11,6 +11,7 @@
 	lua
 	nodejs
 	terminus-nerdfont
+    terminus_font
 	wofi
     wayland
  ];
