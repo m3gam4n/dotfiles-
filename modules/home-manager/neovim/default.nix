@@ -39,7 +39,7 @@
 		{url = "https://github.com/nvimdev/oceanic-material"},
 
         -- gruvbox
-		{url = "https://github.com/nvimdev/oceanic-material"},
+		{url = "https://github.com/morhetz/gruvbox"},
 
 		-- html syntax
 		{url = "https://github.com/othree/html5.vim"},
@@ -55,6 +55,14 @@
 		    NERDTreeDirArrows =1
 		   }
 		},
+        -- gitsigns  
+	{
+            url = "https://github.com/lewis6991/gitsigns.nvim",
+            config = function()
+	    	require('gitsigns').setup()	
+		end,
+        },
+
 		-- cool indents :D
 		{url = "https://github.com/Yggdroot/indentLine"},
 		-- auto brackets
