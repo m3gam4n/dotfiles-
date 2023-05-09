@@ -59,12 +59,16 @@ programs.light.enable = true;
 virtualisation.libvirtd.enable = true;
 programs.dconf.enable = true;
 
+#docker
+virtualisation.docker.enable = true;
+
   users.users = {
     mega = {
       initialPassword = "TestPass123!";
       isNormalUser = true;
       extraGroups = [
       "wheel"
+      "docker"
       "networkmanager"
       "sudo"
       "video"

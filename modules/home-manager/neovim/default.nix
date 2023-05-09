@@ -44,6 +44,9 @@
 		-- html syntax
 		{url = "https://github.com/othree/html5.vim"},
 		{url = "https://github.com/othree/xml.vim"},
+        -- vim-jsx-pretty
+		{url = "https://github.com/maxmellon/vim-jsx-pretty"},
+
 		-- nerdtree
 		{
 		  url = "https://github.com/preservim/nerdtree",
@@ -99,7 +102,7 @@
 		vim.api.nvim_set_keymap('n', '<Leader>w', ':write<Enter>', {})
 		vim.api.nvim_set_keymap('n', '<Leader>r', ':redraw!<Enter>', {})
 		vim.api.nvim_set_keymap('i','kj','esc>', {noremap = true})
-		vim.api.nvim_set_keymap('v','kj','esc>', {noremap = true})
+ 		vim.api.nvim_set_keymap('v','kj','esc>', {noremap = true})
 	'';
         enable = true;
  };
