@@ -1,109 +1,62 @@
 {pkgs, lib, config, ...}:
 {
-    programs.neovim = {
-	extraLuaConfig = ''
-		local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-		if not vim.loop.fs_stat(lazypath) then
-		  vim.fn.system({
-		    "git",
-		    "clone",
-		    "--filter=blob:none",
-		    "https://github.com/folke/lazy.nvim.git",
-		    "--branch=stable", -- latest stable release
-		    lazypath,
-		  })
-		end
-		vim.opt.rtp:prepend(lazypath)
+#home.file.".config/nvim/settings.lua".source = ./init.lua;
+#luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/lsp-config.lua
+#luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/pugins.lua
+#luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/whichkey.lua
+#luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/treesitter.lua
+programs.neovim = {
+            enable = true;
+            extraConfig = ''
+	    	luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/settings.lua
+	    	luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/bufferline.lua
+	    	luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/lsp.lua
+            '';
+            plugins = with pkgs.vimPlugins; [ 
+                    #syntax
+        		    vim-nix
+                    vim-javascript
+                    vim-jsx-typescript
 
-		vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
+                    nvim-autopairs
+                    #colorschemes
+                    tokyonight-nvim
 
-		require("lazy").setup({
-		-- coc autocomplete
-		  {
-		  url = "https://github.com/neoclide/coc.nvim",
-		  branch = "release",
-		    conifg = function()
-		    require('coc.lua').setup()
-		   end,
-		},
+                    nerdtree
+                    nerdtree-git-plugin
 
-		-- global settings
-		-- currently not working settings is not in runtime path :c
-		-- require('lua/settings').setup{}
+                    #lsp 
+                    nvim-compe
 
-		-- plugins
-		-- oceanic-next
-		{url = "https://github.com/mhartington/oceanic-next"},
+                    nvim-treesitter
+                    bufferline-nvim
 
-		-- oceanic-material
-		{url = "https://github.com/nvimdev/oceanic-material"},
+                    
+                {
+                    plugin = lualine-nvim;
+                    config = "lua require('lualine').setup()";
+                }
+                {
+                    plugin = telescope-nvim;
+                    config = "lua require('telescope').setup()";
+                }
+                {
+                    plugin = indent-blankline-nvim;
+                    config = "lua require('indent_blankline').setup()";
+                }
+                {
+                    plugin = nvim-lspconfig;
+                    config = ''
+                        lua << EOF
+                        require('lspconfig').rust_analyzer.setup{}
+                        require('lspconfig').sumneko_lua.setup{}
+                        require('lspconfig').rnix.setup{}
+                        require('lspconfig').zk.setup{}
+                        EOF
+                    '';
+                }
 
-        -- gruvbox
-		{url = "https://github.com/morhetz/gruvbox"},
+            ];
 
-		-- html syntax
-		{url = "https://github.com/othree/html5.vim"},
-		{url = "https://github.com/othree/xml.vim"},
-        -- vim-jsx-pretty
-		{url = "https://github.com/maxmellon/vim-jsx-pretty"},
-
-		-- nerdtree
-		{
-		  url = "https://github.com/preservim/nerdtree",
-		   keys = {
-		     {"<leader>f", "<cmd>:NERDTreeToggle<Enter>", desc="toogle nerdtree"},
-		   },
-		   opts = {
-		    NERDTreeMinimalUI =1,
-		    NERDTreeDirArrows =1
-		   }
-		},
-        -- gitsigns  
-	{
-            url = "https://github.com/lewis6991/gitsigns.nvim",
-            config = function()
-	    	require('gitsigns').setup()	
-		end,
-        },
-
-		-- cool indents :D
-		{url = "https://github.com/Yggdroot/indentLine"},
-		-- auto brackets
-		{url = "https://github.com/jiangmiao/auto-pairs"},
-		-- cool comments
-		{
-		url = "https://github.com/preservim/nerdcommenter",
-		keys = {
-		     {"<leader-_><plug>", "<cmd>:NERDCommenterToogle", desc="comment"},
-		   }
-		},
-
-		-- bufferline
-		{'akinsho/bufferline.nvim', version = "v3.*", dependencies = 'nvim-tree/nvim-web-devicons'},
-		})
-		local set = vim.opt
-        set.syntax  = on
-		set.number = true
-		set.ignorecase = true
-		set.smartcase = true
-		set.visualbell = true
-		set.expandtab = true
-		set.tabstop = 4
-		set.smartindent = true
-		set.shiftwidth = 4
-		set.autoindent = true
-		set.termguicolors = true
-		require('bufferline').setup{}
-		set.mouse=a
-		-- set.backspace
-
-		-- colorscheme idk why set.colorscheme doesn't work :(
-		vim.cmd[[colorscheme oceanic_material]]
-		vim.api.nvim_set_keymap('n', '<Leader>w', ':write<Enter>', {})
-		vim.api.nvim_set_keymap('n', '<Leader>r', ':redraw!<Enter>', {})
-		vim.api.nvim_set_keymap('i','kj','esc>', {noremap = true})
- 		vim.api.nvim_set_keymap('v','kj','esc>', {noremap = true})
-	'';
-        enable = true;
- };
+        };
 }

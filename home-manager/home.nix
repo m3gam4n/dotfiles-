@@ -24,6 +24,9 @@
   home = {
     username = "mega";
     homeDirectory = "/home/mega";
+    sessionVariables = {
+	NIXOS_CONFIG_DIR = "$HOME/.config/nixos/";
+    };
   };
 
   # Enable home-manager and git

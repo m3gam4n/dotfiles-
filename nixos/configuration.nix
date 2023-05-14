@@ -54,6 +54,10 @@ programs.light.enable = true;
     };
   };
 
+# environment variables
+ environment.sessionVariables = {
+        NIXOS_CONFIG_DIR = "$HOME/.config/nixos/";
+};
 
 #enable virtualisation
 virtualisation.libvirtd.enable = true;

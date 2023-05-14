@@ -15,5 +15,6 @@
     hyprpaper
 	wofi
     wayland
+    rnix-lsp
  ];
 }
