@@ -11,6 +11,7 @@ programs.neovim = {
 	    	luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/settings.lua
 	    	luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/bufferline.lua
 	    	luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/lsp.lua
+	    	luafile $NIXOS_CONFIG_DIR/modules/home-manager/neovim/lua/keybindings.lua
             '';
             plugins = with pkgs.vimPlugins; [ 
                     #syntax
@@ -18,7 +19,6 @@ programs.neovim = {
                     vim-javascript
                     vim-jsx-typescript
 
-                    nvim-autopairs
                     #colorschemes
                     tokyonight-nvim
 
@@ -32,10 +32,19 @@ programs.neovim = {
                     nvim-treesitter
                     bufferline-nvim
 
+                    nerdcommenter
+
+                    #icons
+                    nvim-web-devicons
+
                     
                 {
                     plugin = lualine-nvim;
                     config = "lua require('lualine').setup()";
+                }
+                {
+                    plugin = nvim-autopairs;
+                    config = "lua require('nvim-autopairs').setup()";
                 }
                 {
                     plugin = telescope-nvim;
