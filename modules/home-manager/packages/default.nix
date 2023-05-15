@@ -16,5 +16,9 @@
 	wofi
     wayland
     rnix-lsp
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    nodePackages.vscode-langservers-extracted
+    sumneko-lua-language-server
  ];
 }

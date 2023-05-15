@@ -27,6 +27,7 @@ programs.neovim = {
 
                     #lsp 
                     nvim-compe
+                    nvim-lspconfig
 
                     nvim-treesitter
                     bufferline-nvim
@@ -43,17 +44,6 @@ programs.neovim = {
                 {
                     plugin = indent-blankline-nvim;
                     config = "lua require('indent_blankline').setup()";
-                }
-                {
-                    plugin = nvim-lspconfig;
-                    config = ''
-                        lua << EOF
-                        require('lspconfig').rust_analyzer.setup{}
-                        require('lspconfig').sumneko_lua.setup{}
-                        require('lspconfig').rnix.setup{}
-                        require('lspconfig').zk.setup{}
-                        EOF
-                    '';
                 }
 
             ];

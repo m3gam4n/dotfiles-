@@ -1,4 +1,8 @@
 require'lspconfig'.rnix.setup{}
+require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.zk.setup{}
+require'lspconfig'.eslint.setup{}
+
 vim.o.completeopt = "menuone,noselect"
 
 require'compe'.setup{
@@ -17,7 +21,7 @@ documentation = true;
 source = {
     path = true;
     buffer = true;
-    nvim_lsp = true; 
+    nvim_lsp = true;
     nvim_lua = true;
     tags = true;
     treesitter = true;
@@ -34,8 +38,20 @@ _G.tab_complete = function()
         return t "<C-n>"
     else
         return t "<S-Tab>"
-    end 
-end 
+    end
+end
 
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+
+
+require("lspconfig").tsserver.setup {
+  on_attach = function(client)
+    if client.config.flags then
+      client.config.flags.allow_incremental_sync = true
+    end
+    client.resolved_capabilities.document_formatting = false
+    set_lsp_config(client)
+  end
+}
+
