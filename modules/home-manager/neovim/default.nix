@@ -19,8 +19,15 @@ programs.neovim = {
                     vim-javascript
                     vim-jsx-typescript
 
+                    #syntax highlight
+                    nvim-treesitter
+
                     #colorschemes
                     tokyonight-nvim
+                    ayu-vim
+                    aurora
+                    everforest
+                    srcery-vim
 
                     nerdtree
                     nerdtree-git-plugin
@@ -29,15 +36,13 @@ programs.neovim = {
                     nvim-compe
                     nvim-lspconfig
 
-                    nvim-treesitter
+                    vim-prettier
                     bufferline-nvim
 
                     nerdcommenter
 
                     #icons
                     nvim-web-devicons
-
-                    
                 {
                     plugin = lualine-nvim;
                     config = "lua require('lualine').setup()";

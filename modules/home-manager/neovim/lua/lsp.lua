@@ -2,6 +2,7 @@ require'lspconfig'.rnix.setup{}
 require'lspconfig'.sumneko_lua.setup{}
 require'lspconfig'.zk.setup{}
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.cssls.setup{}
 
 vim.o.completeopt = "menuone,noselect"
 

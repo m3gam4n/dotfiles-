@@ -10,3 +10,25 @@ font:
     family:  Terminus
     style: Bold
   size: 15
+colors:
+  # Default colors
+  primary:
+    background: '0x020221'
+    foreground: '0xb4b4b9'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x020221'
+    cursor: '0xffe8c0'
+
+  # Normal colors
+  normal:
+    black:   '0x000004'
+    red:     '0xff3600'
+    green:   '0x859933'
+    yellow:  '0xffc552'
+    blue:    '0x635196'
+    magenta: '0xff761a'
+    cyan:    '0x34bfa4'
+    white:   '0xb4b4b9'
+  custom_cursor_colors: true

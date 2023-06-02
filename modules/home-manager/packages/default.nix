@@ -15,10 +15,15 @@
     hyprpaper
 	wofi
     wayland
+    gimp
     rnix-lsp
+    flameshot
+    gnome.nautilus
+    tor-browser-bundle-bin
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
     sumneko-lua-language-server
+    nodePackages.prettier
  ];
 }
