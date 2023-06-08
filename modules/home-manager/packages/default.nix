@@ -25,5 +25,6 @@
     nodePackages.vscode-langservers-extracted
     sumneko-lua-language-server
     nodePackages.prettier
+    postman
  ];
 }
