@@ -46,13 +46,19 @@
 #backlight no home-manager entry :c
 programs.light.enable = true;
 
+#bluetooth
+services.blueman.enable = true;
+
 #enable ly display manager
- services.xserver = {
+services.xserver = {
+  enable = true;
+  displayManager.lightdm = {
     enable = true;
-    displayManager.lightdm = {
-      enable = true;
-    };
   };
+};
+
+# ssh
+services.openssh.enable =true;
 
 # environment variables
  environment.sessionVariables = {
@@ -78,6 +84,15 @@ virtualisation.docker.enable = true;
       "video"
       "nix"
       "libvirtd"
+     ];
+    };
+    hs-ssh = {
+      initialPassword = "TestPass123!";
+      isNormalUser = true;
+      extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
      ];
     };
   };

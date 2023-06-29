@@ -20,11 +20,18 @@
     flameshot
     gnome.nautilus
     tor-browser-bundle-bin
+    tor
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
+    nodePackages.nodemon
     sumneko-lua-language-server
     nodePackages.prettier
     postman
+    postgresql
+    mullvad-vpn
+    proxychains
+    weechat
+    cacert
  ];
 }

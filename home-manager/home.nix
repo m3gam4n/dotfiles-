@@ -12,6 +12,7 @@
      #outputs.homeManagerModules.pulseaudio
      #outputs.homeManagerModules.backlight
      outputs.homeManagerModules.git
+     #outputs.homeManagerModules.ssh
 
   ];
   nixpkgs = {

@@ -10,4 +10,5 @@
    pulseaudio = import ./pulseaudio;
    backlight = import ./backlight;
    git = import ./git;
+   ssh = import ./ssh;
 }
